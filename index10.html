@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Will you be my Valentine? 💕</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            z-index: 10;
+        }
+
+        h1 {
+            color: #d63031;
+            font-size: 40px;
+            margin-bottom: 20px;
+            animation: pulse 1.5s ease-in-out infinite;
+            text-align: center;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        p {
+            font-size: 20px;
+            color: #2d3436;
+            margin-bottom: 40px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        button {
+            padding: 15px 40px;
+            font-size: 20px;
+            font-family: 'Georgia', serif;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        #yesBtn {
+            background-color: #00b894;
+            color: white;
+        }
+
+        #yesBtn:hover {
+            background-color: #00a383;
+            transform: scale(1.1);
+        }
+
+        #noBtn {
+            background-color: #d63031;
+            color: white;
+            position: relative;
+        }
+
+        .heart {
+            position: fixed;
+            font-size: 30px;
+            pointer-events: none;
+            animation: float 6s linear;
+            z-index: 5;
+        }
+
+        @keyframes float {
+            0% { 
+                transform: translateY(0) rotate(0deg); 
+                opacity: 0; 
+            }
+            10% { opacity: 1; }
+            100% { 
+                transform: translateY(-110vh) rotate(360deg); 
+                opacity: 0; 
+            }
+        }
+
+        .celebration {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 1000;
+        }
+
+        .celebration h2 {
+            font-size: 40px;
+            color: #d63031;
+            margin-bottom: 20px;
+            animation: bounce 1s ease infinite;
+            text-align: center;
+            font-family: 'georgia', serif;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .celebration p {
+            font-size: 20px;
+            color: #2d3436;
+            font-family: 'georgia', serif;
+            text-align: center;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        #backBtn {
+            background-color: #345189;
+            color: white;
+            margin-top: 30px;
+            padding: 15px 50px;
+            font-size: 22px;
+        }
+
+        #backBtn:hover {
+            background-color: #799cce;
+            transform: scale(1.1);
+        }
+
+        /* Confetti */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            pointer-events: none;
+            animation: confetti-fall 3s linear;
+            z-index: 1001;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Fireworks */
+        .firework {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: firework-burst 1.5s ease-out;
+            z-index: 1001;
+        }
+
+        @keyframes firework-burst {
+            0% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--x), var(--y));
+                opacity: 0;
+            }
+        }
+
+        .credits {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 1px 0;
+            text-align: center;
+            font-family: 'georgia';
+            font-size: 14px;
+            color: #2d3436;
+            z-index: 50;
+            border-top: 2px solid darkred;
+        }
+
+        .credits p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>You are my Valentine's boy, right?</h1>
+        <p>Be careful with your choice...</p>
+        <div class="buttons">
+            <button id="yesBtn">Yes</button>
+            <button id="noBtn">No</button>
+        </div>
+    </div>
+
+    <div class="celebration" id="celebration">
+        <h2>Oh, my Dearest Lovely Boy.</h2>
+        <p>Now, you can go through the website.</p>
+        <p>Every single detail was made just for <i>you</i> my love!<br>
+        This is not just for Valentine's Day, I did it for all the "normal" days.<br>
+        Our days, because every single day together needs to be celebrated!</p>
+        <button id="backBtn">Main Page</button>
+    </div>
+
+    <script>
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const celebration = document.getElementById('celebration');
+        const backBtn = document.getElementById('backBtn');
+
+        // Create clapping sound
+        function playClap() {
+            try {
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                oscillator.frequency.value = 200;
+                oscillator.type = 'square';
+                
+                gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+                
+                oscillator.start(audioContext.currentTime);
+                oscillator.stop(audioContext.currentTime + 0.1);
+            } catch (e) {
+                console.log('Audio not supported');
+            }
+        }
+
+        // Create confetti effect
+        function createConfetti() {
+            const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ffa500', '#ff1493'];
+            
+            for (let i = 0; i < 150; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.classList.add('confetti');
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.top = '-20px';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.width = (Math.random() * 10 + 5) + 'px';
+                    confetti.style.height = (Math.random() * 10 + 5) + 'px';
+                    confetti.style.animationDelay = Math.random() * 0.5 + 's';
+                    confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => confetti.remove(), 4000);
+                }, i * 20);
+            }
+        }
+
+        // Create fireworks effect
+        function createFirework(x, y) {
+            const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ffa500'];
+            
+            for (let i = 0; i < 40; i++) {
+                const firework = document.createElement('div');
+                firework.classList.add('firework');
+                firework.style.left = x + 'px';
+                firework.style.top = y + 'px';
+                firework.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                const angle = (Math.PI * 2 * i) / 40;
+                const velocity = 100 + Math.random() * 150;
+                firework.style.setProperty('--x', Math.cos(angle) * velocity + 'px');
+                firework.style.setProperty('--y', Math.sin(angle) * velocity + 'px');
+                
+                document.body.appendChild(firework);
+                
+                setTimeout(() => firework.remove(), 1500);
+            }
+        }
+
+        // Create floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            const emojis = ['❤️', '💕', '💖', '💗', '💓', '🌸', '💝', '💞'];
+            heart.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.bottom = '-50px';
+            heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
+            document.body.appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 6000);
+        }
+
+        // YES button - CELEBRATION TIME!
+        yesBtn.addEventListener('click', function() {
+            // SAVE that he said yes!
+            localStorage.setItem('saidYes', 'true');
+            
+            // Play clapping sounds
+            for (let i = 0; i < 8; i++) {
+                setTimeout(() => playClap(), i * 250);
+            }
+            
+            // Create massive confetti rain
+            createConfetti();
+            
+            // Create fireworks at different positions
+            setTimeout(() => createFirework(window.innerWidth / 2, window.innerHeight / 3), 200);
+            setTimeout(() => createFirework(window.innerWidth * 0.25, window.innerHeight * 0.4), 500);
+            setTimeout(() => createFirework(window.innerWidth * 0.75, window.innerHeight * 0.4), 700);
+            setTimeout(() => createFirework(window.innerWidth * 0.5, window.innerHeight * 0.6), 1000);
+            setTimeout(() => createFirework(window.innerWidth * 0.3, window.innerHeight * 0.5), 1300);
+            setTimeout(() => createFirework(window.innerWidth * 0.7, window.innerHeight * 0.5), 1600);
+            
+            // Show celebration screen
+            setTimeout(() => {
+                celebration.style.display = 'flex';
+            }, 500);
+            
+            // Create explosion of hearts
+            for (let i = 0; i < 80; i++) {
+                setTimeout(() => createHeart(), i * 80);
+            }
+        });
+
+        // Back to home button
+        backBtn.addEventListener('click', function() {
+            window.location.href = 'index1.html';
+        });
+
+        // NO button - runs away from mouse!
+        noBtn.addEventListener('mouseover', function() {
+            const x = Math.random() * (window.innerWidth - 200);
+            const y = Math.random() * (window.innerHeight - 100);
+            
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+            noBtn.style.transition = 'none';
+        });
+
+        // NO button click (if they somehow manage to click it)
+        noBtn.addEventListener('click', function() {
+            alert('Come on baby! You know you want to say yes! 💕');
+            yesBtn.style.transform = 'scale(1.5)';
+            yesBtn.style.backgroundColor = '#00ff00';
+            
+            // Make the NO button even harder to click
+            noBtn.style.padding = '5px 10px';
+            noBtn.style.fontSize = '12px';
+        });
+
+        // Background hearts
+        setInterval(createHeart, 1500);
+    </script>
+
+    <footer class="credits">
+        <p>Made with love by Marina for Antonin</p>
+        <p>Valentine's Day 2026 / 5 months of relationship</p>
+    </footer>
+</body>
+</html>

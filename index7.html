@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pictures of us</title>
+    <!-- Connect your CSS file -->
+    <link rel="stylesheet" href="CSS/style7.css">
+</head>
+
+    <body>
+        <audio id="bgMusic" autoplay loop volume="0.5">
+  <source src="songs/lettre_a_elise.mp3" type="audio/mpeg">
+</audio>
+        
+        <h1 class="title">PICTURES OF US</h1>
+        <button onclick="window.location.href='index6.html';">Pictures</button><br>
+        <h2>From the 09/12/2025 to the 02/14/2026. </h2>
+        <h3>In just 5 months, we spent a looooot of time together, and we built something.<br>
+        We went to the WEI, we made sport, we slept together, learned from each other and discovered together.<br>
+        I think that this is a start, and that those pictures are the first era of OUR evolution, our relationship.
+        I start 2026 with you, and i intend to end 2026<i> with you</i>.</h3>
+        <button class="music-control" onclick="toggleMusic()">🎵</button>
+        
+        
+        <div class="gallery">
+<img src="photos/US1.jpeg" alt="Photo de nous deux.">
+<img src="photos/US2.jpg" alt="Photo de nous deux.">
+<img src="photos/US3.jpg" alt="Photo de nous deux">
+<img src="photos/US4.jpg" alt="Photo de nous deux.">
+<img src="photos/US5.jpg" alt="Photo de nous deux.">
+<img src="photos/US6.jpg" alt="Photo de nous deux">
+<img src="photos/US7.jpg" alt="Photo de nous deux.">
+<img src="photos/US8.jpg" alt="Photo de nous deux.">
+<img src="photos/US9.jpg" alt="Photo de nous deux.">
+<img src="photos/US11.jpg" alt="Photo de nous deux.">
+<img src="photos/US12.jpg" alt="Photo de nous deux.">
+        </div><br><br><br><br>
+        
+        <script>
+function toggleMusic() {
+  const music = document.getElementById('bgMusic');
+  const button = document.querySelector('.music-control');
+  if (music.paused) {
+    music.play();
+    button.innerHTML = '🎵';
+  } else {
+    music.pause();
+    button.innerHTML = '🔇';
+  }
+}
+</script>
+          <footer class="credits">
+    <p>Made with love by Marina for Antonin</p>
+    <p>Valentine's Day 2026 / 5 months of relationship</p>
+</footer>
+    </body>
+</html>

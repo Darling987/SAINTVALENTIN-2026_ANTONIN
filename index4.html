@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Antonin saint valentine's dates ideas list</title>
+        <link rel="stylesheet" href="CSS/style4.css">
+    </head>
+    <body>
+         <audio id="bgMusic" autoplay loop volume="0.5">
+  <source src="songs/kingdom_dance.mp3" type="audio/mpeg">
+</audio>
+       
+    
+      <h1 class="title">YOUR DATES IDEAS LIST</h1><br><br>
+        <div id="text1">Okay, so now, here are some ideas i had for us, we can create special dates with them.<br>
+            I hope we will do each of them and be happy together while doing them !
+            </div>
+        <button class="music-control" onclick="toggleMusic()">🎵</button>
+        <br><br>
+        <button onclick="window.location.href='index1.html';" >Home Page</button>
+        <button onclick="window.location.href='index2.html';" >Heart fonction</button>
+        <button onclick="window.location.href='index3.html';" >100 reasons why</button>
+        <button onclick="window.location.href='index5.html';">Little diary</button>
+        <button onclick="window.location.href='index6.html';">Pictures</button><br><br><br>
+        
+         <p><b>This list is non-exhaustive.</b></p>
+        
+        <div class="container">
+        <p class="text1">CULTURE<br><br>
+            Museum<br>
+            Castle<br>
+            National parks<br>
+            Library<br>
+            Church<br>
+            Monuments<br>
+            Country<br>
+            Ancient city<br>
+            Pyramids<br>
+            Caves<br>
+            Art Gallery<br>
+            Opera and Theater<br>
+            Historical sites<br>
+            UNESCO sites<br>
+            Festivals<br>
+            Architecture</p>
+            
+        <p class="text2">ROMANTIC<br><br>
+            Restaurant<br>
+            Beach<br>
+            Spa<br>
+            Aquarium<br>
+            Parks<br>
+            Movie theater<br>
+            Cooking<br>
+            Picnic<br>
+            Painting<br>
+            Clay<br>
+            Boat day<br> 
+            Movies night<br>
+            Star gazing<br>
+            Sunset watching<br>
+            Dancing<br>
+            Hot air balloon<br>
+            Candlelit dinner<br>
+            Pottery<br>
+            Lego<br>
+            Sculpture<br>
+            Escape game<br>
+            Boowling<br>
+            Camping<br>
+            Puzzle</p>
+            
+        <p class="text3">SPORT<br><br>
+            Mountain hiking<br>
+            Climbing<br>
+            Running<br>
+            Biking<br>
+            Gym<br>
+            Walking<br>
+            Swimming (with fishs)<br>
+            Husky sledding<br>
+            Skiing<br>
+            Parachuting<br>
+            Skydiving<br>
+            Sports match<br>
+            Super bowl<br>
+            Great Wall of China<br>
+            Kayaking<br>
+            Bungee jumping<br>
+            Scuba diving<br>
+            Tree climbing</p>
+            
+        <p class="text4">DREAM DATE<br><br>
+            Japan<br>
+            Huacachina<br>
+            Los delfines rosados<br>
+            Pyramides de Gizeh<br>
+            Salar d'Uyuni<br>
+            Teotihuacan<br>
+            7 Wonders of the world<br>
+            Greece<br>
+            New York<br>
+            Mount Everest<br>
+            Northern lights<br>
+            Maldives<br>
+            Safari in Africa<br>
+            Road trip<br>
+            Iceland<br>
+            Bali<br>
+            Machu Picchu<br>
+            Thailand lanterns<br>
+            First night in <i>OUR</i> home</p>
+            </div><br><br><br><br>
+        
+       
+    
+<script>
+function createHeart() {
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
+  heart.innerHTML = '🌸';
+  heart.style.left = Math.random() * 100 + 'vw';
+  
+  // Random duration between 5-8 seconds
+  const duration = Math.random() * 3 + 5;
+  heart.style.animation = `float ${duration}s linear`;
+  
+  document.body.appendChild(heart);
+  
+  // Remove after animation completes
+  setTimeout(() => heart.remove(), duration * 1000);
+}
+
+// Start creating flowers immediately and continuously
+setInterval(createHeart, 800);
+</script> 
+        
+        <script>
+function toggleMusic() {
+  const music = document.getElementById('bgMusic');
+  const button = document.querySelector('.music-control');
+  if (music.paused) {
+    music.play();
+    button.innerHTML = '🎵';
+  } else {
+    music.pause();
+    button.innerHTML = '🔇';
+  }
+}
+</script>
+  <footer class="credits">
+    <p>Made with love by Marina for Antonin</p>
+    <p>Valentine's Day 2026 / 5 months of relationship</p>
+</footer>
+    </body>
+</html>
