@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Antonin saint valentine's reasons why</title>
+    <link rel="stylesheet" href="CSS/styles2.css">
+</head>
+<body>
+     <audio id="bgMusic" autoplay loop volume="0.5">
+  <source src="songs/test_drive.mp3" type="audio/mpeg">
+</audio>
+    
+    
+    <h1 class="title">100 REASONS WHY I LOVE YOU</h1>
+    <div class="intro">You can click on the letter and discover why you are a brilliant and sparkling person!</div>
+    <button class="music-control" onclick="toggleMusic()">🎵</button>
+    <br />
+    <button onclick="window.location.href='index1.html';">Home Page</button>
+    <button onclick="window.location.href='index2.html';">Heart fonction</button>
+    <button onclick="window.location.href='index4.html';">Date ideas list</button>
+    <button onclick="window.location.href='index5.html';">Little diary</button>
+    <button onclick="window.location.href='index6.html';">Pictures</button><br><br><br>
+    
+    <button class="letter" id="showPaperBtn">Open My Love Letter 💌</button>
+
+    <!-- Dark overlay behind the letter -->
+    <div class="paper-overlay" id="overlay"></div>
+
+    <!-- The letter -->
+    <div class="paper" id="paper">
+        <button class="close-letter" id="closeBtn">✕</button>
+        <p class="text1">💌 My love, my sunshine,🌹</p>
+        <p class="text2">Here is, just for you, a list of 100 reasons that explain why you are so incredible,
+        why I love you. For my heart only beats for you :</p>
+        <p class="text3">✭ Pretty ✭ Beautiful ✭ kind  ✭ handsome 
+        ✭ gentle ✭ a ray of sunlight ✭ intelligent ✭ cute 
+        ✭ clever ✭ empathic ✭ comprehensive ✭ muscular ✭ sportive ✭ cultivated
+        ✭ strong ✭ interesting ✭ perfectionist ✭ a piece of nature's art ✭ bright 
+        ✭ my angel ✭ my prince ✭ my king ✭ my knight ✭ my groom ✭ beautiful smile
+        ✭ soft eyes ✭ gentle touch ✭ you look like the first flowers ✭ manly ✭ 
+        hot ✭ cute voice ✭ a beautiful face ✭ a beautiful shape ✭ a hero ✭ as bright as the moon in the dark
+        ✭ romantic ✭ passionate ✭ lovely ✭ charming ✭ idealistic ✭ dreamer ✭ 
+        you make people happy ✭ you higtlight life ✭ calming ✭ hypnotizing ✭ listening ✭
+        great smell ✭ perfect jawline ✭ perfect adam apple ✭ perfect face ✭ perfect hairs
+        ✭ perfect hands ✭ you look like happiness ✭ my muse ✭ my inspiration ✭ like greek god ✭
+        my Apollon ✭ my Romeo ✭ you could do the most terrible things and i would still find you good ✭
+        you make life colorfull ✭ you make life brighter ✭ you make life better ✭ you look like a dream ✭
+        loving you is a dream ✭ kissing you is a dream ✭ you look like a ray of hope in the depths of hell ✭
+        the eternity with you would never be enough ✭ seducer ✭ kind hearted ✭ a good friend and boyfriend ✭ 
+        the bane of my existance ✭ the object of all my desires ✭ burning for you is not enough ✭ 
+        sparkly ✭ everybody should stand for you ✭ you desrve happiness ✭ you deserve love ✭
+        you deserve everything ✭ you deserve the moon ✭ you are a star ✭ my superhero ✭ the chosen one ✭
+        my wizard ✭ your heart makes a beautiful melancholy ✭ you have a noble soul ✭ 
+        splendid ✭ fabulous ✭ mavelous ✭ you shine ✭ you would be the sun in a multitude of planets ✭
+        you are like a sunset, i could never stop looking at you ✭ you're passionate ✭ your laughter is the most beautiful sound ✭
+        i would still choose you in another universe ✭ you make me want to smile ✭ you give a sweeter taste to life ✭
+        you look like the perfect boyfriend ✭ being <i>you</i> is a compliment itself my love ♡</p>
+        <p class="text3">And yet, i still can't find the perfect words to describe my feelings for you... Loving you is ineffable... I will never be able to find my words,
+        because i will always love you...</p>
+        <p class="text4">Yours truly, the lover of my thoughts</p>
+    </div><br><br><br><br>
+
+    <footer class="credits">
+        <p>Made with love by Marina for Antonin</p>
+        <p>Valentine's Day 2026 / 5 months of relationship</p>
+    </footer>
+
+    <script>
+        const showBtn = document.getElementById('showPaperBtn');
+        const paper = document.getElementById('paper');
+        const overlay = document.getElementById('overlay');
+        const closeBtn = document.getElementById('closeBtn');
+
+        // Open letter
+        showBtn.addEventListener('click', () => {
+            paper.style.display = 'block';
+            overlay.style.display = 'block';
+        });
+
+        // Close letter with X button
+        closeBtn.addEventListener('click', () => {
+            paper.style.display = 'none';
+            overlay.style.display = 'none';
+        });
+
+        // Close letter when clicking outside (on overlay)
+        overlay.addEventListener('click', () => {
+            paper.style.display = 'none';
+            overlay.style.display = 'none';
+        });
+    </script>
+    
+    <script>
+function toggleMusic() {
+  const music = document.getElementById('bgMusic');
+  const button = document.querySelector('.music-control');
+  if (music.paused) {
+    music.play();
+    button.innerHTML = '🎵';
+  } else {
+    music.pause();
+    button.innerHTML = '🔇';
+  }
+}
+</script>
+</body>
+</html>

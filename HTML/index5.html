@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Antonin saint valentine's diary</title>
+        <link rel="stylesheet" href="CSS/style5.css">
+    </head>
+    <body>
+       <audio id="bgMusic" autoplay loop volume="0.5">
+  <source src="songs/minecraft.mp3" type="audio/mpeg">
+</audio>
+    
+    
+        <h1 class="title">YOUR LITTLE VIRTUAL DIARY</h1>
+        <div id="mainDiv">I'm happy you came here ! It's actually a safe place I made for you.<br>
+            As you can see you have multipule parts with diffrents utilities for you to read when you feel bad or even good.
+</div>
+      <button class="music-control" onclick="toggleMusic()">🎵</button>
+        <br />
+        <button onclick="window.location.href='index1.html';" >Home Page</button>
+        <button onclick="window.location.href='index2.html';" >Heart fonction</button>
+        <button onclick="window.location.href='index3.html';" >100 reasons why</button>
+        <button onclick="window.location.href='index4.html';">Date ideas list</button>
+        <button onclick="window.location.href='index6.html';">Pictures</button>
+        
+    <div class="diary-container">
+
+  <div class="diary-card">
+    <h2>When you feel tired</h2>
+    <p>
+      Take a breath my lovely boy. You don’t have to do everything today.
+      Rest is not giving up, take some time for you.
+    </p>
+  </div>
+
+  <div class="diary-card">
+    <h2>When you feel bad</h2>
+    <p>
+      Bad days don’t define you.
+      They pass, even if it doesn’t feel like it right now. Your life is not deined by one bad day, and even if the days 
+        stay bad, it's like a roller coaster, it will go up in a moment !
+    </p>
+  </div>
+
+  <div class="diary-card">
+    <h2>When you feel alone</h2>
+    <p>
+      You are not invisible. I'm with you, in your heart and in your mind.
+      Someone cares, I care, even if it’s just this page right now, you will awlays have people even if you don't see them,
+        they see you.
+    </p>
+  </div>
+
+  <div class="diary-card">
+    <h2>When you feel dumb</h2>
+    <p>
+      You are learning. Every. Single. Day. You are not an end, you're a start. And everyday you start differently.
+      Intelligence is not speed, it’s persistence and consistance. You are intelligent and you have capacity. Even if you don't
+        see them, people see them, so don't doubt.
+    </p>
+  </div>
+
+  <div class="diary-card">
+    <h2>When you need a hug & a kiss</h2>
+    <p>
+      Imagine warm arms around you, soft lips against your cheeks. Because even if I can't be with you now, my heart is still for you.
+      You are safe. You are loved. I love you and I will still do tomorrow morning and each mornings after. 💞
+    </p>
+  </div>
+
+  <div class="diary-card">
+    <h2>When you feel good</h2>
+    <p>
+      Remember this feeling. And try your best to keep it. That's good, I'm proud of you.
+      You deserve moments like this, more than you think. You deserve happiness. Don't give up, I believe in you and in
+        the goals you want to achieve. You can do anything, you just have to believe in you just as I do !
+    </p>
+  </div>
+
+</div>
+      <br><br><br><br>
+<script>
+function createHeart() {
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
+  heart.innerHTML = '⚔️🏹';
+  heart.style.left = Math.random() * 100 + 'vw';
+  
+  // Random duration between 5-8 seconds
+  const duration = Math.random() * 3 + 5;
+  heart.style.animation = `float ${duration}s linear`;
+  
+  document.body.appendChild(heart);
+  
+  // Remove after animation completes
+  setTimeout(() => heart.remove(), duration * 1000);
+}
+
+// Start creating flowers immediately and continuously
+setInterval(createHeart, 800);
+</script> 
+      
+      <script>
+function toggleMusic() {
+  const music = document.getElementById('bgMusic');
+  const button = document.querySelector('.music-control');
+  if (music.paused) {
+    music.play();
+    button.innerHTML = '🎵';
+  } else {
+    music.pause();
+    button.innerHTML = '🔇';
+  }
+}
+</script>
+
+          <footer class="credits">
+    <p>Made with love by Marina for Antonin</p>
+    <p>Valentine's Day 2026 / 5 months of relationship</p>
+</footer>
+        
+    </body>
+</html>
