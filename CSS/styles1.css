@@ -1,0 +1,184 @@
+.title { 
+  color: darkred; 
+  text-align: center; 
+  font-weight: bold; 
+  border: solid;
+  border-radius: 8px;
+  background-color: antiquewhite;
+  font-size: 30px; 
+  font-family: 'cambria';
+  animation: pulse 2s ease-in-out infinite;
+  display: inline-block;
+  padding: 3px 3px;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  text-align: center;
+  font-size: 24px;
+  font-family: 'georgia';
+}
+.music-control {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: beige;
+  border: 2px solid darkred;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+.music-control:hover {
+  transform: scale(1.1);
+  background-color: darkred;
+}
+
+h1{
+  font-size: 20px;
+  display : inline-block;
+  background-color: antiquewhite;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-family: 'georgia';
+}
+
+button {
+  background-color: darkred;
+  color: white;
+  border: hidden;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: 'georgia';
+  padding: 10px 20px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #4c60af;
+  color: white;
+  transform: scale(1.1);
+}
+
+button:active {
+  background-color: #4565a0;
+  transform: scale(0.95);
+}
+
+
+.text1 {
+  display: inline-block;
+  padding: 20px 20px;
+  text-align: justify;
+  font-weight: bold;
+  background-color: antiquewhite;
+  font-size: 16px;
+  font-family: 'georgia';
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+.text2 {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: end;
+  background-color: antiquewhite;
+  font-size: 20px;
+  font-family: 'georgia';
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  position: relative;
+}
+
+/* Transparent background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("bride.jpg") no-repeat center/cover;
+  opacity: 0.5;
+  z-index: -10;
+}
+
+.gallery {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.gallery img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 180px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Floating hearts animation */
+@keyframes float {
+  0% { 
+    transform: translateY(0) rotate(0deg); 
+    opacity: 0; 
+  }
+  5% { 
+    opacity: 1; 
+  }
+  100% { 
+    transform: translateY(-110vh) rotate(360deg); 
+    opacity: 0; 
+  }
+}
+
+.heart {
+  position: fixed;
+  bottom: -50px;
+  font-size: 30px;
+  z-index: 100;
+  pointer-events: none;
+  border : none;
+}
+
+.credits {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1px 0;
+  text-align: center;
+  font-family: 'georgia';
+  font-size: 14px;
+  color: #2d3436;
+  z-index: 50;
+  border-top: 2px solid darkred;
+}
+
+.credits p {
+  margin: 5px 0;
+  font-size: 14px;
+}

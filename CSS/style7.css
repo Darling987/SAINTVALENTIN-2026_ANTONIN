@@ -1,0 +1,96 @@
+html body::before {
+  content: "";
+  position: fixed;
+  text-align: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("Foret.jpg") no-repeat center/cover;
+
+  opacity: 0.5;   /* Change this number: 0 = invisible, 1 = solid */
+
+  z-index: -10;     /* Keep the image behind your text */
+}
+.music-control {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: beige;
+  border: 2px solid darkred;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+.music-control:hover {
+  transform: scale(1.1);
+  background-color: darkred;
+}
+
+button{
+    display: block;
+    margin: 20px auto;
+    font-size: 30px;
+    
+transition: all 0.2s ease;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #4c60af;
+  color: white;
+  transform: scale(1.1);
+}
+
+button:active {
+  background-color: #4565a0;
+  transform: scale(0.95);
+}
+
+
+h1{
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+}
+
+h3{
+    text-align: right;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 1400px;
+}
+.gallery img {
+  width: 250px;            /* largeur fixe */
+  height: auto ;
+  border-radius: 10px;
+}
+.credits {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1px 0;
+    text-align: center;
+    font-family: 'georgia';
+    font-size: 14px;
+    color: #2d3436;
+    z-index: 50;
+    border-top: 2px solid darkred;
+}
+
+.credits p {
+    margin: 5px 0;
+    font-size: 14px;
+}
